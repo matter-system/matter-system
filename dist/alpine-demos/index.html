@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  
+<div class="container p-4">
+  <h1 class="text-4xl leading-tight mb-6">AlpineJS examples</h1>
+  
+  <h2 class="text-2xl">Tabs</h2>
+
+  <div class="py-8" x-data="{tab: 'one'}">
+    <div class="flex border-b border-gray-400 pl-4">
+      <button @click="tab = 'one'" :class="{'bg-gray-100': tab === 'one'}" class="bg-transparent hover:bg-gray-100 focus:outline-none py-4 px-6 border border-b-0">Tab 1</button>
+      <button @click="tab = 'two'" :class="{'bg-gray-100': tab === 'two'}" class="bg-transparent hover:bg-gray-100 focus:outline-none py-4 px-6 border border-b-0 border-l-0">Tab 2</button>
+      <button @click="tab = 'three'" :class="{'bg-gray-100': tab === 'three'}" class="bg-transparent hover:bg-gray-100 focus:outline-none py-4 px-6 border border-b-0 border-l-0">Tab 3</button>
+    </div>
+    <div class="p-4">
+      <div x-show.transition.in="tab === 'one'"><p>Hello, I am the content of <strong>tab 1</strong>.</p></div>
+      <div x-show.transition.in="tab === 'two'"><p>Hey you, I am the content of <strong>tab 2</strong>.</p></div>
+      <div x-show.transition.in="tab === 'three'"><p>Howdy, I am the content of <strong>tab 3</strong>.</p></div>
+    </div>
+  </div>
+
+
+<div class="yooo what" x-data="{name: 'Simon'}" x-init="console.log(`hello ${name}, mounting ${$el.classList}`)">
+  <p x-text="$el.classList">
+</div>
+<div x-data="{name: 'Simon'}" x-init="() => console.log(`hello ${name}, mounted`)"></div>
+
+
+<div x-data="{a: 2}">
+  <p x-text="a"></p>
+  <div x-data="{a: 1}">
+    <p x-text="a"></p>
+    <button @click="a = 0">reset a</button>
+  </div>
+</div>
+
+<div class="my-16"></div>
+
+<div x-data="{count: 0}">
+  <p>Current count: <strong x-text="count"></strong></p>
+  <button x-on:click="count++">+1</button>
+</div>
+
+
+<div class="mt-32" x-data="app()">
+  <input class="bg-gray-100 h-12 px-4" type="text" x-model="searchValue"></input>
+  <p>Search value: <span x-text="searchValue"></span></p>
+  <ul>
+    <li>test</li>
+    <template x-for="(name, index) in getFilteredSearchResults()" :key="index">
+      <li x-text="name"></li>
+    </template>
+  </ul>
+</div>
+
+</div>
+
+<script>
+const names = ['Alix', 'Heather', 'Simon', 'Anthony']
+function app() {
+  return {
+    searchValue: '',
+    shortList: [],
+    names,
+    resetSearch() {return this.searchValue = ''},
+    getFilteredSearchResults() {
+      return this.names.filter(name => name.toLowerCase().includes(this.searchValue.toLowerCase()))
+    }
+  }
+}
+</script>
+  
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</body>
+</html>
