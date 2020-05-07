@@ -7,9 +7,14 @@
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-
-  {{ content | safe }}
-  
+  <div class="flex h-screen">
+    {% include "partials/sidebar/index.njk" %}
+    <main class="p-8 overflow-y-scroll flex-1">
+      <div class="max-w-4xl">
+        {{ content | safe }}
+      </div>
+    </main>
+  </div>
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </body>
 </html>
