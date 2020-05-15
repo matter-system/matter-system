@@ -10,10 +10,12 @@
   <div class="flex h-screen">
     {% include "partials/sidebar/index.njk" %}
     <main class="p-8 overflow-y-scroll flex-1">
+      <input type="text" placeholder="Search or jump to..." class="border-2 border-gray-200 rounded h-10 w-full px-4 focus:outline-none focus:shadow-outline placeholder-gray-400"> 
       <div class="max-w-4xl">
         {{ content | safe }}
       </div>
     </main>
+    {% include "partials/sidebar/sidebar_2.njk" %}
   </div>
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </body>
