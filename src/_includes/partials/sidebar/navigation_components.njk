@@ -1,8 +1,40 @@
+{% set links = [
+  {
+    name: 'Buttons',
+    path: '/components/buttons',
+    image: '/images/navigation/buttons'
+  }, {
+    name: 'Dropdowns',
+    path: '/components/dropdowns',
+    image: '/images/navigation/dropdown'
+  }, {
+    name: 'Checkboxes',
+    path: '/components/checkbox',
+    image: '/images/navigation/checkbox'
+  }, {
+    name: 'Radios',
+    path: '/components/radio',
+    image: '/images/navigation/radio'
+  }
+] %}
+
 <div class="space-y-2">
   <h2 class="mb-3 lg:mb-2 text-gray-500 uppercase tracking-wide font-bold text-sm lg:text-xs">Components</h2>
   <ul>
-    <li><a href="#">Buttons</a></li>
-    <li><a href="#">Tabs</a></li>
-    <li><a href="#">Modals</a></li>
+    {% for link in links %}
+      <li>
+        {% if link.path ~ '/' === page.url %}
+          <a href="{{ link.path }}" class="inline-block relative overflow-hidden p-3 w-full bg-indigo-600 hover:bg-indigo-700 transition duration-200 text-sm rounded text-white font-semibold">
+            {{ link.name }}
+            <img src="{{ link.image }}--selected.svg" class="absolute right-0 bottom-0">
+          </a>
+        {% else %}
+          <a href="{{ link.path }}" class="inline-block relative overflow-hidden p-3 w-full bg-gray-100 hover:bg-gray-200 transition duration-200 text-sm rounded text-gray-600 font-semibold">
+            {{ link.name }}
+            <img src="{{ link.image }}.svg" class="absolute right-0 bottom-0">
+          </a>
+        {% endif %}
+      </li>
+    {% endfor %}
   </ul>
 </div>
