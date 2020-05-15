@@ -8,22 +8,20 @@
   </head>
   <body>
     <div class="flex h-screen">
+      {% include "partials/header/header.njk" %}
       {% include "partials/sidebar/index.njk" %}
-      <main class="relative p-8 overflow-y-scroll flex-1">
-        <input type="text" placeholder="Search or jump to..." class="border-2 border-gray-200 rounded h-10 w-full px-4 focus:outline-none focus:border-gray-400 placeholder-gray-400 transition duration-200">
-        <div class="mt-6">
-          <h1 class="text-3xl font-bold text-black">
-            {{ title }}
-          </h1>
-          <p class="text-gray-600 ">
-            {{ intro }}
-          </p>
-          <div class="mt-12 space-y-6">
-            {{ content | safe }}
-          </div>
-        </main>
-        {% include "partials/sidebar/sidebar_2.njk" %}
-      </div>
+      <main class="relative mt-16 px-8 py-6 overflow-y-scroll flex-1">
+        <h1 class="text-3xl mt-0 font-bold text-black">
+          {{ title }}
+        </h1>
+        <p class="text-gray-600 ">
+          {{ intro }}
+        </p>
+        <div class="mt-12 space-y-6">
+          {{ content | safe }}
+        </div>
+      </main>
+      {% include "partials/sidebar/sidebar_2.njk" %}
       <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer="defer"></script>
     </body>
   </html>
