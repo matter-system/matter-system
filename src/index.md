@@ -1,6 +1,7 @@
 ---
-title: What's the matter with UI?
+title: Welcome to matter!
+intro: "Intro snippet maybe"
 layout: layout/page.njk
 ---
 
-Welcome to matter-system.
+<p class="text-gray-600">Then text starts</p>
