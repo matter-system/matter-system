@@ -404,7 +404,19 @@
 
 <div
   class="flex flex-col p-4 w-full bg-white border border-gray-200 shadow shadow-md rounded-lg"
+  x-data="{ codeOpen: false }"
 >
+  <div class="flex justify-between">
+    <h3 class="text-sm font-medium text-gray-600">Buttons</h3>
+    <button
+      class="flex items-center justify-center font-medium text-gray-600 w-8 h-8 rounded hover:bg-gray-200 transition duration-200 focus:outline-none cursor-pointer"
+      @click=" codeOpen = !codeOpen"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="19" height="15" viewbox="0 0 19 15">
+  <g fill="none" fill-rule="evenodd" stroke="#888" stroke-linecap="round" stroke-linejoin="round" transform="translate(1)"><line x1="10.5" x2="6.5" y1=".5" y2="14.5"/><polyline points="7.328 2.672 7.328 8.328 1.672 8.328" transform="rotate(135 4.5 5.5)"/><polyline points="15.328 6.672 15.328 12.328 9.672 12.328" transform="scale(1 -1) rotate(-45 -10.435 0)"/></g>
+</svg>
+    </button>
+  </div>
   <div class="flex justify-center items-center p-16">
     
 <div class="space-x-2">
@@ -423,7 +435,7 @@ focus:outline-none focus:shadow-outline bg-purple-500 hover:bg-purple-600">
 </div>
 
   </div>
-  <div class="rounded">
+  <div class="rounded" x-show="codeOpen">
     <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>space-x-2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>px-4 py-3 text-white rounded shadow-sm<br>focus:outline-none focus:shadow-outline bg-indigo-600 hover:bg-indigo-700<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    button one<br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>px-4 py-3 text-white rounded shadow-sm<br>focus:outline-none focus:shadow-outline bg-pink-500 hover:bg-pink-600<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    button two<br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>px-4 py-3 text-white rounded shadow-sm<br>focus:outline-none focus:shadow-outline bg-purple-500 hover:bg-purple-600<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    button three<br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
   </div>
 </div>
@@ -433,11 +445,23 @@ focus:outline-none focus:shadow-outline bg-purple-500 hover:bg-purple-600">
 
 <div
   class="flex flex-col p-4 w-full bg-white border border-gray-200 shadow shadow-md rounded-lg"
+  x-data="{ codeOpen: false }"
 >
+  <div class="flex justify-between">
+    <h3 class="text-sm font-medium text-gray-600">Buttons</h3>
+    <button
+      class="flex items-center justify-center font-medium text-gray-600 w-8 h-8 rounded hover:bg-gray-200 transition duration-200 focus:outline-none cursor-pointer"
+      @click=" codeOpen = !codeOpen"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="19" height="15" viewbox="0 0 19 15">
+  <g fill="none" fill-rule="evenodd" stroke="#888" stroke-linecap="round" stroke-linejoin="round" transform="translate(1)"><line x1="10.5" x2="6.5" y1=".5" y2="14.5"/><polyline points="7.328 2.672 7.328 8.328 1.672 8.328" transform="rotate(135 4.5 5.5)"/><polyline points="15.328 6.672 15.328 12.328 9.672 12.328" transform="scale(1 -1) rotate(-45 -10.435 0)"/></g>
+</svg>
+    </button>
+  </div>
   <div class="flex justify-center items-center p-16">
     Icon Buttons
   </div>
-  <div class="rounded">
+  <div class="rounded" x-show="codeOpen">
     <pre class="language-html"><code class="language-html">Icon Buttons</code></pre>
   </div>
 </div>
@@ -446,11 +470,23 @@ focus:outline-none focus:shadow-outline bg-purple-500 hover:bg-purple-600">
 
 <div
   class="flex flex-col p-4 w-full bg-white border border-gray-200 shadow shadow-md rounded-lg"
+  x-data="{ codeOpen: false }"
 >
+  <div class="flex justify-between">
+    <h3 class="text-sm font-medium text-gray-600">Buttons</h3>
+    <button
+      class="flex items-center justify-center font-medium text-gray-600 w-8 h-8 rounded hover:bg-gray-200 transition duration-200 focus:outline-none cursor-pointer"
+      @click=" codeOpen = !codeOpen"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="19" height="15" viewbox="0 0 19 15">
+  <g fill="none" fill-rule="evenodd" stroke="#888" stroke-linecap="round" stroke-linejoin="round" transform="translate(1)"><line x1="10.5" x2="6.5" y1=".5" y2="14.5"/><polyline points="7.328 2.672 7.328 8.328 1.672 8.328" transform="rotate(135 4.5 5.5)"/><polyline points="15.328 6.672 15.328 12.328 9.672 12.328" transform="scale(1 -1) rotate(-45 -10.435 0)"/></g>
+</svg>
+    </button>
+  </div>
   <div class="flex justify-center items-center p-16">
     Grouped Buttons
   </div>
-  <div class="rounded">
+  <div class="rounded" x-show="codeOpen">
     <pre class="language-html"><code class="language-html">Grouped Buttons</code></pre>
   </div>
 </div>
