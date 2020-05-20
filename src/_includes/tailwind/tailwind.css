@@ -6,6 +6,7 @@
 
 code[class*="language-"],
 pre[class*="language-"] {
+  font-size: 0.95em;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -47,7 +48,6 @@ pre[class*="language-"] ::selection {
 pre[class*="language-"] {
   overflow: auto;
   position: relative;
-  margin: 0.5em 0;
   @apply p-8;
 }
 
