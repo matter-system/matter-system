@@ -21,7 +21,27 @@ tag: component
   <div class="flex justify-center items-center p-16">
     {{ content | safe }}
   </div>
-  <div class="rounded" x-show="codeOpen">
+  <div
+    class="rounded w-full"
+    style="background-color: rgba(26, 32, 44, var(--bg-opacity));"
+    x-show="codeOpen"
+  >
+    <div class="flex p-2 justify-between">
+      <button
+        class="flex items-center text-sm text-gray-600 py-1 px-2 rounded hover:bg-gray-800 hover:text-white transition duration-200 focus:outline-none cursor-pointer"
+      >
+        <span class="mr-2"
+          >{% include 'partials/icons/icon_eye_hide.njk' %}</span
+        >
+        Hide Class Styles
+      </button>
+      <button
+        class="flex items-center text-sm text-gray-600 py-1 px-2 rounded hover:bg-gray-800 hover:text-white transition duration-200 focus:outline-none cursor-pointer"
+      >
+        <span class="mr-2">{% include 'partials/icons/icon_copy.njk' %}</span>
+        Copy Code
+      </button>
+    </div>
     {% highlight "html" %}
     {{ content | safe }}
     {% endhighlight %}
@@ -47,3 +67,5 @@ focus:outline-none focus:shadow-outline' %} {% set content %}
 
 {{ component_box("Icon Buttons") }}
 {{ component_box("Grouped Buttons") }}
+{{ component_box("Extra") }}
+{{ component_box("Something else") }}
