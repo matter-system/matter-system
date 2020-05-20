@@ -1,0 +1,28 @@
+{% set links = [ { name: 'Search', path: '/patterms/search', image: 'buttons' },
+{ name: 'Menu', path: '/patterms/menu', image: 'dropdown' }, { name: 'Pricing',
+path: '/patterms/pricing', image: 'checkbox' }, { name: 'Notifications', path:
+'/patterms/notifications', image: 'radio' } ] %}
+
+<div class="space-y-2">
+  <h2 class="mb-3 text-gray-500 uppercase tracking-wide font-bold text-xs">
+    Patterns
+  </h2>
+  <ul>
+    {% for link in links %} {% set isActive = link.path ~ '/' === page.url %} {%
+    set image = link.image ~ '--selected.njk' if isActive else link.image ~
+    '.njk' %}
+
+    <li>
+      <a
+        href="{{ link.path }}"
+        class="inline-block relative overflow-hidden p-3 w-full {{ 'bg-indigo-600 hover:bg-indigo-700 text-white' if isActive else 'bg-gray-100 hover:bg-gray-200 text-gray-600' }} transition duration-200 text-sm rounded font-semibold"
+      >
+        {{ link.name }}
+        <div class="absolute right-0 bottom-0">
+          {% include 'partials/icons/navigation/' ~ image %}
+        </div>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
