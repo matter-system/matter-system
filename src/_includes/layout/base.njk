@@ -10,7 +10,7 @@
     <div class="flex h-screen">
       {% include "partials/header/header.njk" %}
       {% include "partials/sidebar/index.njk" %}
-      <main class="relative mt-16 px-8 py-6 overflow-y-scroll flex-1">
+      <main class="relative mt-16 px-8 pt-6 pb-32 overflow-y-auto flex-1">
         <h1 class="text-3xl mt-0 font-bold text-black">
           {{ title }}
         </h1>
@@ -21,7 +21,7 @@
           {{ content | safe }}
         </div>
       </main>
-      {% include "partials/sidebar/sidebar_2.njk" %}
+      {% include "partials/sidebar/sidebar_subcomponents.njk" %}
       <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer="defer"></script>
     </body>
   </html>
