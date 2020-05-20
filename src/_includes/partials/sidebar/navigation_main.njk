@@ -1,18 +1,17 @@
 {% set links = [
-  {name: 'Overview', path: '/overview', icon: 'icon_overview' },
+  {name: 'Overview', path: '/', icon: 'icon_overview' },
   {name: 'Getting started', path: '/getting-started', icon: 'icon_gettingstarted' }
 ] %}
 
-
 <ul class="space-y-4">
   {% for link in links %}
-    
+
     {% set isActive = link.path ~ '/' == page.url %}
-    
-    <li>      
+
+    <li>
       <a href="{{ link.path }}" class="flex items-center font-medium {{ 'text-indigo-600' if isActive else 'text-gray-600' }}">
-        <div class="w-10">
-        {% include 'partials/icons/' ~ link.icon ~ '.njk' %}
+        <div class="mr-4">
+          {% include 'partials/icons/' ~ link.icon ~ '.njk' %}
         </div>
         {{ link.name }}
       </a>
