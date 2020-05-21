@@ -1,0 +1,74 @@
+---
+title: Alerts
+intro: "A button triggers an event or action. They let users know what will happen next."
+tag: component
+---
+
+{% macro component_box(content) %}
+  <div
+  class="flex flex-col p-4 w-full bg-white border border-gray-200 shadow shadow-md rounded-lg"
+  x-data="{ codeOpen: false }"
+>
+    <div class="flex justify-between">
+      <h3 class="text-sm font-medium text-gray-600">Buttons</h3>
+      <button
+      class="flex items-center justify-center font-medium text-gray-600 w-8 h-8 rounded hover:bg-gray-200 transition duration-200 focus:outline-none cursor-pointer"
+      @click=" codeopen = !codeopen"
+    >
+        {% include 'partials/icons/icon_code.njk' %}
+      </button>
+    </div>
+    <div class="flex justify-center items-center p-16">
+      {{ content | safe }}
+    </div>
+    <div
+    class="rounded w-full"
+    style="background-color: rgba(26, 32, 44, var(--bg-opacity));"
+    x-show="codeopen"
+  >
+      <div class="flex p-2 justify-between">
+        <button
+        class="flex items-center text-sm text-gray-600 py-1 px-2 rounded hover:bg-gray-800 hover:text-white transition duration-200 focus:outline-none cursor-pointer"
+      >
+          <span class="mr-2"
+          >{% include 'partials/icons/icon_eye_hide.njk' %}</span
+        >
+        Hide Class Styles
+      </button>
+        <button
+        class="flex items-center text-sm text-gray-600 py-1 px-2 rounded hover:bg-gray-800 hover:text-white transition duration-200 focus:outline-none cursor-pointer"
+        @click="$refs.codesnippet.select()"
+      >
+          <span class="mr-2">{% include 'partials/icons/icon_copy.njk' %}</span>
+        Copy Code
+      </button>
+      </div>
+      {% highlight "html" %}
+      {{ content | safe }}
+      {% endhighlight %}
+    </div>
+  </div>
+
+{% endmacro %}
+{% set base_classes = 'px-4 py-3 text-white rounded shadow-sm
+focus:outline-none focus:shadow-outline' %}
+{% set content %}
+<div class="space-x-2" x-ref="codeSnippet">
+  <button class="{{ base_classes }} bg-indigo-600 hover:bg-indigo-700">
+    button one
+  </button>
+  <button class="{{ base_classes }} bg-pink-500 hover:bg-pink-600">
+    button two
+  </button>
+  <button class="{{ base_classes }} bg-purple-500 hover:bg-purple-600">
+    button three
+  </button>
+</div>
+{% endset %}
+
+{{ component_box(content) }}
+
+{{ component_box("Icon Buttons") }}
+{{ component_box("Grouped Buttons") }}
+{{ component_box("Extra") }}
+{{ component_box("Something else") }}

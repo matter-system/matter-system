@@ -1,28 +1,74 @@
-{% set links = [ { name: 'Buttons', path: '/components/buttons', image:
-'buttons' }, { name: 'Dropdowns', path: '/components/dropdowns', image:
-'dropdown' }, { name: 'Checkboxes', path: '/components/checkbox', image:
-'checkbox' }, { name: 'Radios', path: '/components/radio', image: 'radio' } ] %}
+{% set links = [
+  {
+    name: 'Alerts',
+    path: '/components/alerts',
+    image: 'alerts'
+  }, {
+    name: 'Breadcrumbs',
+    path: '/components/breadcrumbs',
+    image: 'breadcrumbs'
+  }, {
+    name: 'Buttons',
+    path: '/components/buttons',
+    image: 'buttons'
+  }, {
+    name: 'Checkboxes',
+    path: '/components/checkbox',
+    image: 'checkbox'
+  }, {
+    name: 'Drawers',
+    path: '/components/drawer',
+    image: 'drawer'
+  }, {
+    name: 'Dropdowns',
+    path: '/components/dropdowns',
+    image: 'dropdown'
+  }, {
+    name: 'Modals',
+    path: '/components/modals',
+    image: 'modals'
+  }, {
+    name: 'Pagination',
+    path: '/components/pagination',
+    image: 'pagination'
+  }, {
+    name: 'Progress Bars',
+    path: '/components/progressbar',
+    image: 'progressbar'
+  }, {
+    name: 'Radios',
+    path: '/components/radio',
+    image: 'radio'
+  }, {
+    name: 'Tabs',
+    path: '/components/tabs',
+    image: 'tabs'
+  }, {
+    name: 'Tooltips',
+    path: '/components/tooltips',
+    image: 'tooltips'
+  }
+] %}
 
 <div class="space-y-2">
   <h2 class="mb-3 text-gray-500 uppercase tracking-wide font-bold text-xs">
     Components
   </h2>
   <ul>
-    {% for link in links %} {% set isActive = link.path ~ '/' === page.url %} {%
-    set image = link.image ~ '--selected.njk' if isActive else link.image ~
-    '.njk' %}
+    {% for link in links %}
+      {% set isActive = link.path ~ '/' === page.url %}
+      {%
+    set image = link.image ~ '--selected.png' if isActive else link.image ~
+    '.png' %}
 
-    <li>
-      <a
-        href="{{ link.path }}"
-        class="inline-block relative overflow-hidden p-3 w-full {{ 'bg-indigo-600 hover:bg-indigo-700 text-white' if isActive else 'bg-gray-100 hover:bg-gray-200 text-gray-600' }} transition duration-200 text-sm rounded font-semibold"
-      >
-        {{ link.name }}
-        <div class="absolute right-0 bottom-0">
-          {% include 'partials/icons/navigation/' ~ image %}
-        </div>
-      </a>
-    </li>
+      <li>
+        <a href="{{ link.path }}" class="inline-block relative overflow-hidden p-3 w-full {{ 'bg-indigo-600 hover:bg-indigo-700 text-white' if isActive else 'bg-gray-100 hover:bg-gray-200 text-gray-600' }} transition duration-200 text-sm rounded font-semibold">
+          {{ link.name }}
+          <div class="absolute right-0 top-0">
+            <img src="/images/icons/{{ image }}" height="50" width="109"/>
+          </div>
+        </a>
+      </li>
     {% endfor %}
   </ul>
 </div>
