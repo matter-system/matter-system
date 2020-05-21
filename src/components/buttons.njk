@@ -37,6 +37,7 @@ tag: component
       </button>
       <button
         class="flex items-center text-sm text-gray-600 py-1 px-2 rounded hover:bg-gray-800 hover:text-white transition duration-200 focus:outline-none cursor-pointer"
+        @click="$refs.codeSnippet.select()"
       >
         <span class="mr-2">{% include 'partials/icons/icon_copy.njk' %}</span>
         Copy Code
@@ -50,7 +51,7 @@ tag: component
 
 {% endmacro %} {% set base_classes = 'px-4 py-3 text-white rounded shadow-sm
 focus:outline-none focus:shadow-outline' %} {% set content %}
-<div class="space-x-2">
+<div class="space-x-2" x-ref="codeSnippet">
   <button class="{{ base_classes }} bg-indigo-600 hover:bg-indigo-700">
     button one
   </button>

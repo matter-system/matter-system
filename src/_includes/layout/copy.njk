@@ -15,11 +15,14 @@
     <div class="flex h-screen">
       {% include "partials/header/header.njk" %}
       {% include "partials/sidebar/index.njk" %}
-      <main class="flex flex-1 flex-row relative mt-16 pt-6 pr-64 overflow-y-auto">
+      <main class="flex flex-1 flex-row relative mt-16 pt-6 pr-8 lg:pr-64 overflow-y-auto">
         <div class="flex flex-col flex-1 w-full">
           <h1 class="text-4xl mt-0 font-bold text-black">
             {{ title }}
           </h1>
+          <p class="text-gray-600 ">
+            {{ intro }}
+          </p>
           <div class="mt-12 pb-32 space-y-6">
             {{ content | safe }}
           </div>

@@ -1,6 +1,6 @@
 ---
-title: Overview
-intro: "Intro snippet maybe"
+title: Matter UI System
+intro: "An AlpineJS based component library"
 layout: layout/copy.njk
 ---
 
