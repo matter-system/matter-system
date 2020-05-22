@@ -16,7 +16,7 @@
       {% include "partials/header/header.njk" %}
       {% include "partials/sidebar/index.njk" %}
       <main class="flex flex-1 flex-row relative mt-16 pt-6 overflow-y-auto">
-        <div class="flex flex-col flex-1 w-full">
+        <div class="flex flex-col flex-1 w-full pr-8">
           <h1 class="text-3xl mt-0 font-bold text-black">
             {{ title }}
           </h1>
@@ -27,8 +27,8 @@
             {{ content | safe }}
           </div>
         </div>
-          {% include "partials/sidebar/sidebar_subcomponents.njk" %}
-        </main>
-        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer="defer"></script>
-      </body>
-    </html>
+        {% include "partials/sidebar/sidebar_subcomponents.njk" %}
+      </main>
+      <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer="defer"></script>
+    </body>
+  </html>
