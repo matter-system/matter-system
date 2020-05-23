@@ -282,10 +282,16 @@
             Alerts
           </h1>
           <p class="text-gray-600 ">
-            A button triggers an event or action. They let users know what will happen next.
+            This is the intro text for the alert components.
           </p>
           <div class="mt-12 pb-32 space-y-6">
             
+
+
+
+
+
+
 
 
 
@@ -296,7 +302,7 @@
   x-data="{ codeOpen: false }"
 >
     <div class="flex justify-between">
-      <h3 class="text-sm font-medium text-gray-600">Buttons</h3>
+      <h3 class="text-sm font-medium text-gray-600">Alerts</h3>
       <button
       class="flex items-center justify-center font-medium text-gray-600 w-8 h-8 rounded hover:bg-gray-200 transition duration-200 focus:outline-none cursor-pointer"
       @click=" codeopen = !codeopen"
@@ -308,20 +314,44 @@
     </div>
     <div class="flex justify-center items-center p-16">
       
-<div class="space-x-2" x-ref="codeSnippet">
-  <button class="px-4 py-3 text-white rounded shadow-sm
-focus:outline-none focus:shadow-outline bg-indigo-600 hover:bg-indigo-700">
-    button one
-  </button>
-  <button class="px-4 py-3 text-white rounded shadow-sm
-focus:outline-none focus:shadow-outline bg-pink-500 hover:bg-pink-600">
-    button two
-  </button>
-  <button class="px-4 py-3 text-white rounded shadow-sm
-focus:outline-none focus:shadow-outline bg-purple-500 hover:bg-purple-600">
-    button three
-  </button>
-</div>
+  <div class="space-y-4 max-w-2xl" x-ref="codeSnippet">
+    
+  <div x-data="{show: true}" x-show.transition.duration.500="show === true" class="relative bg-pink-500 border-l-8 border-pink-600 p-6 rounded text-white space-y-3">
+    
+  <h2 class="text-2xl leading-tight">Your request was submitted.</h2>
+  <p>Thank you so much for reaching out. We should be able to get back to you fairly rapidly. Stay tuned!</p>
+
+    <button @click="show = false" class="absolute top-0 right-0 mt-3 mr-4 leading-none text-2xl font-black hover:text-opacity-75">&times;</button>
+  </div>
+
+    
+  <div x-data="{show: true}" x-show.transition.duration.500="show === true" class="relative bg-purple-500 border-l-8 border-purple-600 p-6 rounded text-white space-y-3">
+    
+  <h2 class="text-2xl leading-tight">Your request was submitted.</h2>
+  <p>Thank you so much for reaching out. We should be able to get back to you fairly rapidly. Stay tuned!</p>
+
+    <button @click="show = false" class="absolute top-0 right-0 mt-3 mr-4 leading-none text-2xl font-black hover:text-opacity-75">&times;</button>
+  </div>
+
+    
+  <div x-data="{show: true}" x-show.transition.duration.500="show === true" class="relative bg-indigo-500 border-l-8 border-indigo-600 p-6 rounded text-white space-y-3">
+    
+  <h2 class="text-2xl leading-tight">Your request was submitted.</h2>
+  <p>Thank you so much for reaching out. We should be able to get back to you fairly rapidly. Stay tuned!</p>
+
+    <button @click="show = false" class="absolute top-0 right-0 mt-3 mr-4 leading-none text-2xl font-black hover:text-opacity-75">&times;</button>
+  </div>
+
+    
+  <div x-data="{show: true}" x-show.transition.duration.500="show === true" class="relative bg-blue-500 border-l-8 border-blue-600 p-6 rounded text-white space-y-3">
+    
+  <h2 class="text-2xl leading-tight">Your request was submitted.</h2>
+  <p>Thank you so much for reaching out. We should be able to get back to you fairly rapidly. Stay tuned!</p>
+
+    <button @click="show = false" class="absolute top-0 right-0 mt-3 mr-4 leading-none text-2xl font-black hover:text-opacity-75">&times;</button>
+  </div>
+
+  </div>
 
     </div>
     <div
@@ -348,7 +378,7 @@ focus:outline-none focus:shadow-outline bg-purple-500 hover:bg-purple-600">
         Copy Code
       </button>
       </div>
-      <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>space-x-2<span class="token punctuation">"</span></span> <span class="token attr-name">x-ref</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>codeSnippet<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>px-4 py-3 text-white rounded shadow-sm<br>focus:outline-none focus:shadow-outline bg-indigo-600 hover:bg-indigo-700<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    button one<br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>px-4 py-3 text-white rounded shadow-sm<br>focus:outline-none focus:shadow-outline bg-pink-500 hover:bg-pink-600<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    button two<br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>px-4 py-3 text-white rounded shadow-sm<br>focus:outline-none focus:shadow-outline bg-purple-500 hover:bg-purple-600<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    button three<br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+      <pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>space-y-4 max-w-2xl<span class="token punctuation">"</span></span> <span class="token attr-name">x-ref</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>codeSnippet<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">x-data</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{show: true}<span class="token punctuation">"</span></span> <span class="token attr-name">x-show.transition.duration.500</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>show === true<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>relative bg-pink-500 border-l-8 border-pink-600 p-6 rounded text-white space-y-3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text-2xl leading-tight<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Your request was submitted.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Thank you so much for reaching out. We should be able to get back to you fairly rapidly. Stay tuned!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>show = false<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>absolute top-0 right-0 mt-3 mr-4 leading-none text-2xl font-black hover:text-opacity-75<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token entity" title="&times;">&amp;times;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><br>    <br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">x-data</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{show: true}<span class="token punctuation">"</span></span> <span class="token attr-name">x-show.transition.duration.500</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>show === true<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>relative bg-purple-500 border-l-8 border-purple-600 p-6 rounded text-white space-y-3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text-2xl leading-tight<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Your request was submitted.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Thank you so much for reaching out. We should be able to get back to you fairly rapidly. Stay tuned!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>show = false<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>absolute top-0 right-0 mt-3 mr-4 leading-none text-2xl font-black hover:text-opacity-75<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token entity" title="&times;">&amp;times;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><br>    <br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">x-data</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{show: true}<span class="token punctuation">"</span></span> <span class="token attr-name">x-show.transition.duration.500</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>show === true<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>relative bg-indigo-500 border-l-8 border-indigo-600 p-6 rounded text-white space-y-3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text-2xl leading-tight<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Your request was submitted.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Thank you so much for reaching out. We should be able to get back to you fairly rapidly. Stay tuned!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>show = false<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>absolute top-0 right-0 mt-3 mr-4 leading-none text-2xl font-black hover:text-opacity-75<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token entity" title="&times;">&amp;times;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><br>    <br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">x-data</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>{show: true}<span class="token punctuation">"</span></span> <span class="token attr-name">x-show.transition.duration.500</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>show === true<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>relative bg-blue-500 border-l-8 border-blue-600 p-6 rounded text-white space-y-3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><br>    <br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text-2xl leading-tight<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Your request was submitted.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Thank you so much for reaching out. We should be able to get back to you fairly rapidly. Stay tuned!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span><br><br>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>show = false<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>absolute top-0 right-0 mt-3 mr-4 leading-none text-2xl font-black hover:text-opacity-75<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token entity" title="&times;">&amp;times;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><br><br>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
     </div>
   </div>
 
@@ -360,7 +390,7 @@ focus:outline-none focus:shadow-outline bg-purple-500 hover:bg-purple-600">
   x-data="{ codeOpen: false }"
 >
     <div class="flex justify-between">
-      <h3 class="text-sm font-medium text-gray-600">Buttons</h3>
+      <h3 class="text-sm font-medium text-gray-600">Alerts</h3>
       <button
       class="flex items-center justify-center font-medium text-gray-600 w-8 h-8 rounded hover:bg-gray-200 transition duration-200 focus:outline-none cursor-pointer"
       @click=" codeopen = !codeopen"
@@ -408,7 +438,7 @@ focus:outline-none focus:shadow-outline bg-purple-500 hover:bg-purple-600">
   x-data="{ codeOpen: false }"
 >
     <div class="flex justify-between">
-      <h3 class="text-sm font-medium text-gray-600">Buttons</h3>
+      <h3 class="text-sm font-medium text-gray-600">Alerts</h3>
       <button
       class="flex items-center justify-center font-medium text-gray-600 w-8 h-8 rounded hover:bg-gray-200 transition duration-200 focus:outline-none cursor-pointer"
       @click=" codeopen = !codeopen"
@@ -456,7 +486,7 @@ focus:outline-none focus:shadow-outline bg-purple-500 hover:bg-purple-600">
   x-data="{ codeOpen: false }"
 >
     <div class="flex justify-between">
-      <h3 class="text-sm font-medium text-gray-600">Buttons</h3>
+      <h3 class="text-sm font-medium text-gray-600">Alerts</h3>
       <button
       class="flex items-center justify-center font-medium text-gray-600 w-8 h-8 rounded hover:bg-gray-200 transition duration-200 focus:outline-none cursor-pointer"
       @click=" codeopen = !codeopen"
@@ -504,7 +534,7 @@ focus:outline-none focus:shadow-outline bg-purple-500 hover:bg-purple-600">
   x-data="{ codeOpen: false }"
 >
     <div class="flex justify-between">
-      <h3 class="text-sm font-medium text-gray-600">Buttons</h3>
+      <h3 class="text-sm font-medium text-gray-600">Alerts</h3>
       <button
       class="flex items-center justify-center font-medium text-gray-600 w-8 h-8 rounded hover:bg-gray-200 transition duration-200 focus:outline-none cursor-pointer"
       @click=" codeopen = !codeopen"

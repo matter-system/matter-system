@@ -1,6 +1,6 @@
 ---
 title: Alerts
-intro: "A button triggers an event or action. They let users know what will happen next."
+intro: "This is the intro text for the alert components."
 tag: component
 ---
 
@@ -10,7 +10,7 @@ tag: component
   x-data="{ codeOpen: false }"
 >
     <div class="flex justify-between">
-      <h3 class="text-sm font-medium text-gray-600">Buttons</h3>
+      <h3 class="text-sm font-medium text-gray-600">Alerts</h3>
       <button
       class="flex items-center justify-center font-medium text-gray-600 w-8 h-8 rounded hover:bg-gray-200 transition duration-200 focus:outline-none cursor-pointer"
       @click=" codeopen = !codeopen"
@@ -50,20 +50,29 @@ tag: component
   </div>
 
 {% endmacro %}
+
 {% set base_classes = 'px-4 py-3 text-white rounded shadow-sm
 focus:outline-none focus:shadow-outline' %}
+
+{% macro alert(color, body) %}
+  <div x-data="{show: true}" x-show.transition.duration.500="show === true" class="relative bg-{{ color }}-500 border-l-8 border-{{ color }}-600 p-6 rounded text-white space-y-3">
+    {{ body | safe }}
+    <button @click="show = false" class="absolute top-0 right-0 mt-3 mr-4 leading-none text-2xl font-black hover:text-opacity-75">&times;</button>
+  </div>
+{% endmacro %}
+
+{% set alert_text %}
+  <h2 class="text-2xl leading-tight">Your request was submitted.</h2>
+  <p>Thank you so much for reaching out. We should be able to get back to you fairly rapidly. Stay tuned!</p>
+{% endset %}
+
 {% set content %}
-<div class="space-x-2" x-ref="codeSnippet">
-  <button class="{{ base_classes }} bg-indigo-600 hover:bg-indigo-700">
-    button one
-  </button>
-  <button class="{{ base_classes }} bg-pink-500 hover:bg-pink-600">
-    button two
-  </button>
-  <button class="{{ base_classes }} bg-purple-500 hover:bg-purple-600">
-    button three
-  </button>
-</div>
+  <div class="space-y-4 max-w-2xl" x-ref="codeSnippet">
+    {{ alert('pink', alert_text ) }}
+    {{ alert('purple', alert_text ) }}
+    {{ alert('indigo', alert_text ) }}
+    {{ alert('blue', alert_text ) }}
+  </div>
 {% endset %}
 
 {{ component_box(content) }}
