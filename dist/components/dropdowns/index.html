@@ -42,7 +42,7 @@
         </svg>
       </span>
 
-      <input x-ref="searchInput" @focus="isSearchFocused = true" x-on:keydown.window.slash="$refs.searchInput.focus()" @click.away="isSearchFocused = false" x-on:keydown.escape="$refs.searchInput.blur(), isSearchFocused = false" type="text" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="Search or jump to..." value="" title="Search or jump to..." class="flex flex-1 w-full h-8 focus:outline-none placeholder-gray-600 text-black text-sm"/>
+      <input x-ref="searchInput" @focus="isSearchFocused = true" x-on:keyup.window.slash="$refs.searchInput.focus()" @click.away="isSearchFocused = false" x-on:keydown.escape="$refs.searchInput.blur(), isSearchFocused = false" type="text" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="Search or jump to..." value="" title="Search or jump to..." class="flex flex-1 w-full h-8 focus:outline-none placeholder-gray-600 text-black text-sm"/>
 
       <span class="mr-2 flex h-6 px-2 items-center justify-center border border-gray-300 bg-gray-100 rounded text-gray-600 text-sm">
         /</span >
@@ -277,7 +277,7 @@
   </nav>
 </aside>
       <main class="flex flex-1 flex-row relative mt-16 pt-6 overflow-y-auto pr-8">
-        <div class="flex flex-col flex-1 w-full xl:pr-4">
+        <div class="flex flex-col flex-1 w-full xl:pr-4" style="width: calc(100vw - 534px)">
           <h1 class="text-3xl mt-0 font-bold text-black">
             Dropdowns
           </h1>
