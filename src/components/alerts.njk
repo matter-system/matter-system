@@ -5,51 +5,50 @@ tag: component
 ---
 
 {% macro component_box(content) %}
-<div
-  class="flex flex-col p-4 w-full bg-white border border-gray-200 shadow shadow-md rounded-lg"
-  x-data="{ showCode: false }"
->
-  <div class="flex justify-between items-center sticky top-0">
-    <h3 class="text-sm font-medium text-gray-600">Alerts</h3>
-    <button
-      class="flex items-center justify-center font-medium text-gray-600 w-8 h-8 rounded hover:bg-gray-200 transition duration-200 focus:outline-none cursor-pointer"
-      @click=" showCode = !showCode"
-    >
-      {% include 'partials/icons/icon_code.njk' %}
-    </button>
-  </div>
-  <div class="flex justify-center items-center p-16">
-    {{ content | safe }}
-  </div>
+<div x-data="{showCode: false}">
+
   <div
-    class="rounded w-full"
-    style="background-color: rgba(26, 32, 44, var(--bg-opacity));"
-    x-show="showCode"
+    class="flex flex-col p-4 w-full bg-white border border-gray-200 shadow shadow-md rounded-lg"
   >
-    <div class="flex p-2 justify-between">
+    <div class="flex justify-between items-center sticky top-0">
+      <h3 class="text-sm font-medium text-gray-600">Alerts</h3>
       <button
-        class="flex items-center text-sm text-gray-600 py-1 px-2 rounded hover:bg-gray-800 hover:text-white transition duration-200 focus:outline-none cursor-pointer"
+        class="flex items-center justify-center font-medium text-gray-600 w-8 h-8 rounded hover:bg-gray-200 transition duration-200 focus:outline-none cursor-pointer"
+        @click=" showCode = !showCode"
       >
-        <span class="mr-2"
-          >{% include 'partials/icons/icon_eye_hide.njk' %}</span
-        >
-        Hide Class Styles
-      </button>
-      <button
-        class="flex items-center text-sm text-gray-600 py-1 px-2 rounded hover:bg-gray-800 hover:text-white transition duration-200 focus:outline-none cursor-pointer"
-        @click="$refs.codesnippet.select()"
-      >
-        <span class="mr-2">{% include 'partials/icons/icon_copy.njk' %}</span>
-        Copy Code
+        {% include 'partials/icons/icon_code.njk' %}
       </button>
     </div>
-    {% highlight "html" %}
-    {{ content | safe }}
-    {% endhighlight %}
+    <div class="flex justify-center items-center p-16">
+      {{ content | safe }}
+    </div>
   </div>
+    <div class="rounded w-full bg-gray-900" x-show="showCode">
+      <div class="flex p-2 justify-between">
+        <button
+          class="flex items-center text-sm text-gray-600 py-1 px-2 rounded hover:bg-gray-800 hover:text-white transition duration-200 focus:outline-none cursor-pointer"
+        >
+          <span class="mr-2"
+            >{% include 'partials/icons/icon_eye_hide.njk' %}</span
+          >
+          Hide Class Styles
+        </button>
+        <button
+          class="flex items-center text-sm text-gray-600 py-1 px-2 rounded hover:bg-gray-800 hover:text-white transition duration-200 focus:outline-none cursor-pointer"
+          @click="$refs.codesnippet.select()"
+        >
+          <span class="mr-2">{% include 'partials/icons/icon_copy.njk' %}</span>
+          Copy Code
+        </button>
+      </div>
+      {% highlight "html" %}
+      {{ content | safe }}
+      {% endhighlight %}
+    </div>
 </div>
+{% endmacro %} 
 
-{% endmacro %} {% set base_classes = 'px-4 py-3 text-white rounded shadow-sm
+{% set base_classes = 'px-4 py-3 text-white rounded shadow-sm
 focus:outline-none focus:shadow-outline' %} {% macro alert(color, body) %}
 <div
   x-data="{show: true}"
