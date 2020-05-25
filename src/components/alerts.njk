@@ -7,13 +7,13 @@ tag: component
 {% macro component_box(content) %}
 <div
   class="flex flex-col p-4 w-full bg-white border border-gray-200 shadow shadow-md rounded-lg"
-  x-data="{ codeOpen: false }"
+  x-data="{ showCode: false }"
 >
   <div class="flex justify-between items-center sticky top-0">
     <h3 class="text-sm font-medium text-gray-600">Alerts</h3>
     <button
       class="flex items-center justify-center font-medium text-gray-600 w-8 h-8 rounded hover:bg-gray-200 transition duration-200 focus:outline-none cursor-pointer"
-      @click=" codeopen = !codeopen"
+      @click=" showCode = !showCode"
     >
       {% include 'partials/icons/icon_code.njk' %}
     </button>
@@ -24,7 +24,7 @@ tag: component
   <div
     class="rounded w-full"
     style="background-color: rgba(26, 32, 44, var(--bg-opacity));"
-    x-show="codeopen"
+    x-show="showCode"
   >
     <div class="flex p-2 justify-between">
       <button
