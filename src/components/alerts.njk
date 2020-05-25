@@ -1,78 +1,84 @@
 ---
-title: Alerts
+title: Alert
 intro: "This is the intro text for the alert components."
 tag: component
 ---
 
 {% macro component_box(content) %}
-  <div
+<div
   class="flex flex-col p-4 w-full bg-white border border-gray-200 shadow shadow-md rounded-lg"
   x-data="{ codeOpen: false }"
 >
-    <div class="flex justify-between">
-      <h3 class="text-sm font-medium text-gray-600">Alerts</h3>
-      <button
+  <div class="flex justify-between items-center sticky top-0">
+    <h3 class="text-sm font-medium text-gray-600">Alerts</h3>
+    <button
       class="flex items-center justify-center font-medium text-gray-600 w-8 h-8 rounded hover:bg-gray-200 transition duration-200 focus:outline-none cursor-pointer"
       @click=" codeopen = !codeopen"
     >
-        {% include 'partials/icons/icon_code.njk' %}
-      </button>
-    </div>
-    <div class="flex justify-center items-center p-16">
-      {{ content | safe }}
-    </div>
-    <div
+      {% include 'partials/icons/icon_code.njk' %}
+    </button>
+  </div>
+  <div class="flex justify-center items-center p-16">
+    {{ content | safe }}
+  </div>
+  <div
     class="rounded w-full"
     style="background-color: rgba(26, 32, 44, var(--bg-opacity));"
     x-show="codeopen"
   >
-      <div class="flex p-2 justify-between">
-        <button
+    <div class="flex p-2 justify-between">
+      <button
         class="flex items-center text-sm text-gray-600 py-1 px-2 rounded hover:bg-gray-800 hover:text-white transition duration-200 focus:outline-none cursor-pointer"
       >
-          <span class="mr-2"
+        <span class="mr-2"
           >{% include 'partials/icons/icon_eye_hide.njk' %}</span
         >
         Hide Class Styles
       </button>
-        <button
+      <button
         class="flex items-center text-sm text-gray-600 py-1 px-2 rounded hover:bg-gray-800 hover:text-white transition duration-200 focus:outline-none cursor-pointer"
         @click="$refs.codesnippet.select()"
       >
-          <span class="mr-2">{% include 'partials/icons/icon_copy.njk' %}</span>
+        <span class="mr-2">{% include 'partials/icons/icon_copy.njk' %}</span>
         Copy Code
       </button>
-      </div>
-      {% highlight "html" %}
-      {{ content | safe }}
-      {% endhighlight %}
     </div>
+    {% highlight "html" %}
+    {{ content | safe }}
+    {% endhighlight %}
   </div>
+</div>
 
-{% endmacro %}
-
-{% set base_classes = 'px-4 py-3 text-white rounded shadow-sm
-focus:outline-none focus:shadow-outline' %}
-
-{% macro alert(color, body) %}
-  <div x-data="{show: true}" x-show.transition.duration.500="show === true" class="relative bg-{{ color }}-500 border-l-8 border-{{ color }}-600 p-6 rounded text-white space-y-3">
-    {{ body | safe }}
-    <button @click="show = false" class="absolute top-0 right-0 mt-3 mr-4 leading-none text-2xl font-black hover:text-opacity-75">&times;</button>
-  </div>
-{% endmacro %}
-
-{% set alert_text %}
-  <h2 class="text-2xl leading-tight">Your request was submitted.</h2>
-  <p>Thank you so much for reaching out. We should be able to get back to you fairly rapidly. Stay tuned!</p>
-{% endset %}
-
-{% set content %}
-  <div class="space-y-4 max-w-2xl" x-ref="codeSnippet">
-    {{ alert('pink', alert_text ) }}
-    {{ alert('purple', alert_text ) }}
-    {{ alert('indigo', alert_text ) }}
-    {{ alert('blue', alert_text ) }}
-  </div>
+{% endmacro %} {% set base_classes = 'px-4 py-3 text-white rounded shadow-sm
+focus:outline-none focus:shadow-outline' %} {% macro alert(color, body) %}
+<div
+  x-data="{show: true}"
+  x-show.transition.duration.500="show === true"
+  class="relative bg-{{ color }}-500 border-l-8 border-{{
+    color
+  }}-600 p-6 rounded text-white space-y-3"
+>
+  {{ body | safe }}
+  <button
+    @click="show = false"
+    class="absolute top-0 right-0 mt-3 mr-4 leading-none text-2xl font-black hover:text-opacity-75"
+  >
+    &times;
+  </button>
+</div>
+{% endmacro %} {% set alert_text %}
+<h2 class="text-2xl leading-tight">Your request was submitted.</h2>
+<p>
+  Thank you so much for reaching out. We should be able to get back to you
+  fairly rapidly. Stay tuned!
+</p>
+{% endset %} {% set content %}
+<div class="space-y-4 max-w-2xl" x-ref="codeSnippet">
+  {{ alert("pink", alert_text) }}
+  {{ alert("purple", alert_text) }}
+  {{ alert("indigo", alert_text) }}
+  {{ alert("blue", alert_text) }}
+</div>
 {% endset %}
 
 {{ component_box(content) }}
