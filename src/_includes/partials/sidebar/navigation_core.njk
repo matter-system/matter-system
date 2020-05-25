@@ -6,7 +6,16 @@
 <ul class="space-y-4">
   {% for link in links %}
 
-    {% set isActive = link.path ~ '/' == page.url %}
+    {# 
+      To determine the active state of a link, we check against the current page url.
+      Eleventy adds a closing training slash to URLs, so we need to add it to our "paths"
+      when checking for a match..
+      
+      .. unless the path in question is the root path, '/'
+    #}
+    {% set formattedLinkPath = (link.path ~ '/') if (link.path !== '/') else link.path %}
+
+    {% set isActive = formattedLinkPath == page.url %}
 
     <li>
       <a href="{{ link.path }}" class="flex items-center font-medium {{ 'text-indigo-600' if isActive else 'text-gray-600' }}">
