@@ -6,7 +6,6 @@ tag: component
 
 {% macro component_box(content) %}
 <div x-data="{showCode: false}">
-
   <div
     class="flex flex-col p-4 w-full bg-white border border-gray-200 shadow shadow-md rounded-lg"
   >
@@ -23,32 +22,30 @@ tag: component
       {{ content | safe }}
     </div>
   </div>
-    <div class="rounded w-full bg-gray-900" x-show="showCode">
-      <div class="flex p-2 justify-between">
-        <button
-          class="flex items-center text-sm text-gray-600 py-1 px-2 rounded hover:bg-gray-800 hover:text-white transition duration-200 focus:outline-none cursor-pointer"
+  <div class="rounded w-full bg-gray-900" x-show="showCode">
+    <div class="flex p-2 justify-between">
+      <button
+        class="flex items-center text-sm text-gray-600 py-1 px-2 rounded hover:bg-gray-800 hover:text-white transition duration-200 focus:outline-none cursor-pointer"
+      >
+        <span class="mr-2"
+          >{% include 'partials/icons/icon_eye_hide.njk' %}</span
         >
-          <span class="mr-2"
-            >{% include 'partials/icons/icon_eye_hide.njk' %}</span
-          >
-          Hide Class Styles
-        </button>
-        <button
-          class="flex items-center text-sm text-gray-600 py-1 px-2 rounded hover:bg-gray-800 hover:text-white transition duration-200 focus:outline-none cursor-pointer"
-          @click="$refs.codesnippet.select()"
-        >
-          <span class="mr-2">{% include 'partials/icons/icon_copy.njk' %}</span>
-          Copy Code
-        </button>
-      </div>
-      {% highlight "html" %}
-      {{ content | safe }}
-      {% endhighlight %}
+        Hide Class Styles
+      </button>
+      <button
+        class="flex items-center text-sm text-gray-600 py-1 px-2 rounded hover:bg-gray-800 hover:text-white transition duration-200 focus:outline-none cursor-pointer"
+        @click="$refs.codesnippet.select()"
+      >
+        <span class="mr-2">{% include 'partials/icons/icon_copy.njk' %}</span>
+        Copy Code
+      </button>
     </div>
+    {% highlight "html" %}
+    {{ content | safe }}
+    {% endhighlight %}
+  </div>
 </div>
-{% endmacro %} 
-
-{% set base_classes = 'px-4 py-3 text-white rounded shadow-sm
+{% endmacro %} {% set base_classes = 'px-4 py-3 text-white rounded shadow-sm
 focus:outline-none focus:shadow-outline' %} {% macro alert(color, body) %}
 <div
   x-data="{show: true}"
